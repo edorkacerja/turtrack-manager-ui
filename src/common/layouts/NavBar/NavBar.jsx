@@ -7,6 +7,7 @@ import AuthModal from '../../../features/auth/components/AuthModal/AuthModal';
 import { selectSubscriptionStatus } from "@/features/subscription/redux/subscriptionSlice.js";
 import "./NavBar.scss";
 import ProfileDropdown from "@/common/layouts/ProfileDropdown/ProfileDropdown.jsx";
+import {API_BASE_URL} from "@/common/util/constants.js";
 
 
 const ProfileAvatar = ({ user }) => {
@@ -57,7 +58,7 @@ const NavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await fetch('http://localhost:9999/auth/logout', {
+            await fetch(`${API_BASE_URL}/auth/logout`, {
                 method: 'POST',
                 credentials: 'include'
             });
@@ -85,17 +86,17 @@ const NavBar = () => {
                     Jobs
                 </Link>
             </li>
-            <li>
-                <a
-                    href="http://localhost:8080/ui/clusters"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="nav-link"
-                >
-                    Kafka UI
-                    <ExternalLink className="external-link-icon" size={16} />
-                </a>
-            </li>
+            {/*<li>*/}
+            {/*    <a*/}
+            {/*        href="http://localhost:8080/ui/clusters"*/}
+            {/*        target="_blank"*/}
+            {/*        rel="noopener noreferrer"*/}
+            {/*        className="nav-link"*/}
+            {/*    >*/}
+            {/*        Kafka UI*/}
+            {/*        <ExternalLink className="external-link-icon" size={16} />*/}
+            {/*    </a>*/}
+            {/*</li>*/}
             <li>
                 <Link
                     to="/pricing"
