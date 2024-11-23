@@ -2,9 +2,10 @@
 import axios from 'axios';
 import {store} from "@/store/store.js";
 import {logout} from "../../features/auth/redux/authSlice.jsx";
+import {API_BASE_URL} from "@/common/util/constants.js";
 
 const api = axios.create({
-    baseURL: 'http://localhost:9999',
+    baseURL: API_BASE_URL,
     withCredentials: true
 });
 
