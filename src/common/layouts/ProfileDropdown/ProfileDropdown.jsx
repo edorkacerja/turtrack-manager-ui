@@ -1,7 +1,7 @@
 import { ExternalLink, LogIn, LogOut, CreditCard } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import api from "@/common/api/axios.js";
-import { API_BASE_URL } from "@/common/util/constants.js";
+import { API_BASE__API_V1_URL } from "@/common/util/constants.js";
 import {
     selectSubscription,
     selectCurrentPrice,
@@ -32,7 +32,7 @@ const ProfileDropdown = ({ user, onLogout, isOpen }) => {
 
     const handleManageSubscription = async () => {
         try {
-            const response = await api.post(`${API_BASE_URL}/payment/create-portal-session`, {
+            const response = await api.post(`${API_BASE__API_V1_URL}/payment/create-portal-session`, {
                 email: user.email,
                 returnUrl: window.location.origin + '/dashboard'
             });

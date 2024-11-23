@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {API_BASE_URL} from "../../../common/util/constants.js";
+import {API_BASE__API_V1_URL} from "../../../common/util/constants.js";
 
 const initialState = {
     jobs: [],
@@ -15,7 +15,7 @@ const initialState = {
 
 export const fetchJobs = createAsyncThunk('jobs/fetchJobs', async (_, { getState }) => {
     const { currentPage, itemsPerPage, sortBy, sortDirection } = getState().jobs;
-    const response = await fetch(`${API_BASE_URL}/jobs?page=${currentPage}&size=${itemsPerPage}&sort=${sortBy},${sortDirection}`);
+    const response = await fetch(`${API_BASE__API_V1_URL}/jobs?page=${currentPage}&size=${itemsPerPage}&sort=${sortBy},${sortDirection}`);
 
     if (!response.ok) {
         throw new Error('Failed to fetch jobs');
@@ -26,7 +26,7 @@ export const fetchJobs = createAsyncThunk('jobs/fetchJobs', async (_, { getState
 
 export const updateJobStatus = createAsyncThunk('jobs/updateJobStatus', async ({ jobId, status }, { getState }) => {
     const action = status === 'STOPPED' ? 'stop' : 'start';
-    const response = await fetch(`${API_BASE_URL}/jobs/${jobId}/${action}`, {
+    const response = await fetch(`${API_BASE__API_V1_URL}/jobs/${jobId}/${action}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     });
