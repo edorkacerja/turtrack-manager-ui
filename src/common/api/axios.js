@@ -38,11 +38,12 @@ api.interceptors.response.use(
             return Promise.reject('Failed to connect to server securely. Please contact support.');
         }
 
-        // Authentication error
-        if (error.response?.status === 401) {
-            store.dispatch(logout());
-            window.location.href = '/login';
-        }
+        // // Authentication error
+        // if (error.response?.status === 401) {
+        //     store.dispatch(logout());
+        //
+        //     window.location.href = '/login';
+        // }
 
         // Network error
         if (error.code === 'ERR_NETWORK') {
