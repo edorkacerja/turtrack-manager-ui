@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }) => {
 
     if (!isAuthenticated) {
         // Save the attempted URL for redirect after login
-        return <Navigate to="/login" state={{ from: location }} replace />;
+        return <Navigate to="login" state={{ from: location }} replace />;
     }
 
     return children;
@@ -31,7 +31,7 @@ const PublicRoute = ({ children }) => {
     const isAuthenticated = useSelector(selectIsAuthenticated);
 
     if (isAuthenticated) {
-        return <Navigate to="/dashboard" replace />;
+        return <Navigate to="dashboard" replace />;
     }
 
     return children;
