@@ -5,7 +5,7 @@
       "destination": "https://turtrack.us-east-1.elasticbeanstalk.com/api/v1/:path*"
     },
     {
-      "source": "/:path((?!api|_next|static|public|favicon.ico).*)",
+      "source": "/((?!_next|static|public|favicon\\.ico|api\\/).*)(/)?",
       "destination": "/"
     }
   ]
