@@ -5,10 +5,7 @@ import { API_BASE_URL } from "@/common/util/constants.js";
 
 const api = axios.create({
     baseURL: API_BASE_URL,
-    withCredentials: true,
-    headers: {
-        'Content-Type': 'application/json'
-    }
+    withCredentials: true
 });
 
 // Global error handling

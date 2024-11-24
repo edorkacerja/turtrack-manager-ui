@@ -70,7 +70,7 @@ const LoginPage = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = `${api.defaults.baseURL}/oauth2/authorization/google`;
+        window.location.href = `/oauth2/authorization/google`;
     };
 
     return (
