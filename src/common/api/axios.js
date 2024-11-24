@@ -14,7 +14,7 @@ const api = axios.create({
 // Request interceptor for logging
 api.interceptors.request.use(
     request => {
-        console.log(`[API Request] ${request.method?.toUpperCase()} ${request.baseURL}${request.url}`, {
+        alert(`[API Request] ${request.method?.toUpperCase()} ${request.baseURL}${request.url}`, {
             headers: request.headers,
             data: request.data
         });
