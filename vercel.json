@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/v1/:path*",
-      "destination": "${VITE_TURTRACK_MANAGER_SERVER_BASE_URL}/api/v1/:path*"
+      "destination": "https://turtrack.us-east-1.elasticbeanstalk.com/api/v1/:path*"
     }
   ]
 }
