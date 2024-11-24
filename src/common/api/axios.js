@@ -11,9 +11,26 @@ const api = axios.create({
     }
 });
 
-// Global error handling
+// Request interceptor for logging
+api.interceptors.request.use(
+    request => {
+        console.log(`[API Request] ${request.method?.toUpperCase()} ${request.baseURL}${request.url}`, {
+            headers: request.headers,
+            data: request.data
+        });
+        return request;
+    },
+    error => {
+        console.error('[API Request Error]', error);
+        return Promise.reject(error);
+    }
+);
+
+// Response interceptor for global error handling
 api.interceptors.response.use(
-    response => response,
+    response => {
+        return response;
+    },
     error => {
         // SSL Certificate error
         if (error.code === 'ERR_CERT_AUTHORITY_INVALID') {
