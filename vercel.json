@@ -3,10 +3,7 @@
     {
       "source": "/api/v1/:path*",
       "destination": "https://turtrack.us-east-1.elasticbeanstalk.com/api/v1/:path*"
-    }],
-
-
-      "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
-
-
+    },
+    { "source": "/[^.]+", "destination": "/" }
+  ]
 }
