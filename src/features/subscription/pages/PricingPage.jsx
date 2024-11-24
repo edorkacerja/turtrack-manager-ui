@@ -36,7 +36,7 @@ const PricingPage = () => {
 
     const handleSubscribe = async (selectedPriceId) => {
         try {
-            const response = await api.post("/api/v1/payment/create-portal-session", {
+            const response = await api.post("/payment/create-portal-session", {
                 email: user.email,
                 returnUrl: window.location.origin + '/subscription'
             });

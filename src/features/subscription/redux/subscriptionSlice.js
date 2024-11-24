@@ -6,7 +6,7 @@ export const fetchProducts = createAsyncThunk(
     'subscription/fetchProducts',
     async (_, { rejectWithValue }) => {
         try {
-            const { data } = await api.get('/api/v1/payment/prices');
+            const { data } = await api.get('/payment/prices');
             return data;
         } catch (error) {
             return rejectWithValue(
@@ -23,7 +23,7 @@ export const fetchCurrentPrice = createAsyncThunk(
     'subscription/fetchCurrentPrice',
     async (_, { rejectWithValue }) => {
         try {
-            const { data } = await api.get('/api/v1/payment/current-price');
+            const { data } = await api.get('/payment/current-price');
             return data;
         } catch (error) {
             return rejectWithValue(
@@ -40,7 +40,7 @@ export const fetchSubscription = createAsyncThunk(
     'subscription/fetchSubscription',
     async (_, { rejectWithValue }) => {
         try {
-            const { data } = await api.get('/api/v1/subscriptions/current');
+            const { data } = await api.get('/subscriptions/current');
             return data;
         } catch (error) {
             return rejectWithValue(
@@ -56,7 +56,7 @@ export const updateSubscription = createAsyncThunk(
     'subscription/updateSubscription',
     async (updateData, { rejectWithValue }) => {
         try {
-            const { data } = await api.post('/api/v1/subscriptions/update', updateData);
+            const { data } = await api.post('/subscriptions/update', updateData);
             return data;
         } catch (error) {
             return rejectWithValue(
