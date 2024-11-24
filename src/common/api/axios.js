@@ -11,26 +11,9 @@ const api = axios.create({
     }
 });
 
-// Request interceptor for logging
-api.interceptors.request.use(
-    request => {
-        alert(`[API Request] ${request.method?.toUpperCase()} ${request.baseURL}${request.url}`, {
-            headers: request.headers,
-            data: request.data
-        });
-        return request;
-    },
-    error => {
-        console.error('[API Request Error]', error);
-        return Promise.reject(error);
-    }
-);
-
-// Response interceptor for global error handling
+// Global error handling
 api.interceptors.response.use(
-    response => {
-        return response;
-    },
+    response => response,
     error => {
         // SSL Certificate error
         if (error.code === 'ERR_CERT_AUTHORITY_INVALID') {
@@ -41,7 +24,6 @@ api.interceptors.response.use(
         // // Authentication error
         // if (error.response?.status === 401) {
         //     store.dispatch(logout());
-        //
         //     window.location.href = '/login';
         // }
 
