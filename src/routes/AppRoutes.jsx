@@ -45,28 +45,28 @@ const AppRoutes = () => {
         <Routes>
             {/* Public Routes */}
             <Route path="/" element={<PublicRoute><LandingPage /></PublicRoute>} />
-            <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
-            <Route path="/oauth2/callback" element={<OAuth2Callback />} />
+            <Route path="login" element={<PublicRoute><LoginPage /></PublicRoute>} />
+            <Route path="oauth2/callback" element={<OAuth2Callback />} />
 
             {/* Subscription Routes */}
-            <Route path="/pricing" element={<ProtectedRoute><PricingPage /></ProtectedRoute>} />
-            <Route path="/dashboard" element={<ProtectedRoute>
+            <Route path="pricing" element={<ProtectedRoute><PricingPage /></ProtectedRoute>} />
+            <Route path="dashboard" element={<ProtectedRoute>
                 <SubscriptionGate>
                     <TurTrackDashboard />
                 </SubscriptionGate>
             </ProtectedRoute>} />
             <Route
-                path="/subscription/success"
+                path="subscription/success"
                 element={<ProtectedRoute><SubscriptionSuccessPage /></ProtectedRoute>}
             />
             <Route
-                path="/subscription/renew"
+                path="subscription/renew"
                 element={<ProtectedRoute><RenewSubscriptionPage /></ProtectedRoute>}
             />
 
             {/* Manage Subscription Route */}
             <Route
-                path="/subscription"
+                path="subscription"
                 element={
                     <ProtectedRoute>
                         {/*<SubscriptionGate>*/}
@@ -76,7 +76,7 @@ const AppRoutes = () => {
                 }
             />
             <Route
-                path="/pricing"
+                path="pricing"
                 element={
                     <ProtectedRoute>
                         {/*<SubscriptionGate>*/}
@@ -88,7 +88,7 @@ const AppRoutes = () => {
 
             {/* Protected Routes with SubscriptionGate */}
             <Route
-                path="/dashboard"
+                path="dashboard"
                 element={
                     <ProtectedRoute>
                         <SubscriptionGate>
