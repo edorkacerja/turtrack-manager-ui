@@ -32,7 +32,7 @@ const Login = ({ onClose }) => {
         setError('');
 
         try {
-            const { data } = await api.post('/auth/login', formData);
+            const { data } = await api.post('/api/v1/auth/login', formData);
 
             dispatch(setCredentials({
                 user: {

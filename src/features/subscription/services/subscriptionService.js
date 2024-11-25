@@ -6,7 +6,7 @@ export const subscriptionService = {
 
     fetchClientSecret: async (email, priceId) => {
         try {
-            const response = await api.post('/api/v1/payment/create-checkout-session', {
+            const response = await api.post('/api/v1/checkout/create-checkout-session', {
                 // customerId: user.id,
                 email: email,
                 priceId: priceId

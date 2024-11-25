@@ -33,7 +33,7 @@ const LoginPage = () => {
         setError('');
 
         try {
-            const { data } = await api.post('/auth/login', {
+            const { data } = await api.post('/api/v1/auth/login', {
                 email: formData.email,
                 password: formData.password,
             });
@@ -53,7 +53,7 @@ const LoginPage = () => {
         setError('');
 
         try {
-            const { data } = await api.post('/auth/register', {
+            const { data } = await api.post('/api/v1/auth/register', {
                 email: formData.email,
                 password: formData.password,
                 firstName: formData.firstName,

@@ -4,7 +4,7 @@ import { logout } from "../../features/auth/redux/authSlice.jsx";
 import { API_BASE_URL } from "@/common/util/constants.js";
 
 const api = axios.create({
-    baseURL: API_BASE_URL,
+    // baseURL: API_BASE_URL,
     withCredentials: true
 });
 

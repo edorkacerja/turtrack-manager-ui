@@ -30,7 +30,7 @@ const Register = ({ onClose }) => {
         setError('');
 
         try {
-            const { data } = await api.post('/auth/register', formData);
+            const { data } = await api.post('/api/v1/auth/register', formData);
 
             dispatch(setCredentials({
                 user: {

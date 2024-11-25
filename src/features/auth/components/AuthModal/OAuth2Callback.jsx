@@ -12,7 +12,7 @@ const OAuth2Callback = () => {
         const fetchUserData = async () => {
             try {
                 // The session is already established via cookies
-                const { data: userData } = await api.get('/auth/me');
+                const { data: userData } = await api.get('/api/v1/auth/me');
 
                 dispatch(setCredentials({
                     user: {
