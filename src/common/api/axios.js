@@ -1,10 +1,8 @@
 import axios from 'axios';
-import { store } from "@/store/store.js";
-import { logout } from "../../features/auth/redux/authSlice.jsx";
-import { API_BASE_URL } from "@/common/util/constants.js";
+import {API_BASE_URL} from "@/common/util/constants.js";
 
 const api = axios.create({
-    // baseURL: API_BASE_URL,
+    baseURL: API_BASE_URL,
     withCredentials: true
 });
 

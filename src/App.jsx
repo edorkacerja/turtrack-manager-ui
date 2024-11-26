@@ -16,9 +16,9 @@ function App() {
     useEffect(() => {
         // Only fetch subscription if user is authenticated
         if (isAuthenticated) {
-            dispatch(fetchSubscription());
-            dispatch(fetchCurrentPrice());
+            // dispatch(fetchSubscription());
             dispatch(fetchProducts());
+            dispatch(fetchCurrentPrice());
         }
     }, [dispatch, isAuthenticated]);
 

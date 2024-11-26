@@ -1,7 +1,6 @@
 import { ExternalLink, LogIn, LogOut, CreditCard } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import api from "@/common/api/axios.js";
-import { API_BASE__API_V1_URL } from "@/common/util/constants.js";
 import {
     selectSubscription,
     selectCurrentPrice,
