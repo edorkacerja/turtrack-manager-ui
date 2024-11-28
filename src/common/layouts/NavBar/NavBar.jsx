@@ -8,6 +8,7 @@ import { selectSubscriptionStatus } from "@/features/subscription/redux/subscrip
 import "./NavBar.scss";
 import ProfileDropdown from "@/common/layouts/ProfileDropdown/ProfileDropdown.jsx";
 import {API_BASE_URL} from "@/common/util/constants.js";
+import api from "@/common/api/axios.js";
 
 
 const ProfileAvatar = ({ user }) => {
@@ -58,10 +59,7 @@ const NavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await fetch(`${API_BASE_URL}/auth/logout`, {
-                method: 'POST',
-                credentials: 'include'
-            });
+            await api.post(`/auth/logout`, {});
         } finally {
             dispatch(logout());
             navigate('/login');
