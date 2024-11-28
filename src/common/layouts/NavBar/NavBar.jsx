@@ -59,7 +59,7 @@ const NavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await api.post(`/auth/logout`, {});
+            await api.post(`/api/v1/auth/logout`, {});
         } finally {
             dispatch(logout());
             navigate('/login');
