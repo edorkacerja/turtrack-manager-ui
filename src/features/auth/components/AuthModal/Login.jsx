@@ -24,7 +24,7 @@ const Login = ({ onClose }) => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = `${API_BASE_URL}/oauth2/authorization/google`;
+        window.location.href = `/oauth2/authorization/google`;
     };
 
     const handleSubmit = async (e) => {

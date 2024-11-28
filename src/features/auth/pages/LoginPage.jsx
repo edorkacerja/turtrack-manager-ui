@@ -70,7 +70,7 @@ const LoginPage = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = `/oauth2/authorization/google`;
+        window.location.href = `https://turtrack.us-east-1.elasticbeanstalk.com/oauth2/authorization/google`;
     };
 
     return (
