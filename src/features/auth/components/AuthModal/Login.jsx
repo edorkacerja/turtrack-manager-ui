@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../../redux/authSlice';
 import api from '../../../../common/api/axios';
+import {API_BASE_URL} from "@/common/util/constants.js";
 
 const Login = ({ onClose }) => {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Login = ({ onClose }) => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = `${api.defaults.baseURL}/oauth2/authorization/google`;
+        window.location.href = `${API_BASE_URL}/oauth2/authorization/google`;
     };
 
     const handleSubmit = async (e) => {
