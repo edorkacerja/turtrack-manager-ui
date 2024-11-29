@@ -11,6 +11,8 @@ const OAuth2Callback = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
+                console.log('Cookies:', document.cookie);
+
                 // The session is already established via cookies
                 const { data: userData } = await api.get('/api/v1/auth/me');
 
