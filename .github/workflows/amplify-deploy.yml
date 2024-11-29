@@ -2,7 +2,7 @@ name: Deploy to AWS Amplify
 on:
   push:
     branches:
-      - production
+      - production  # or whatever your production branch name is
 
 jobs:
   deploy:
@@ -18,9 +18,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to AWS Amplify
-        uses: aws-actions/aws-amplify-github-action@v0.5.0
-        with:
-          app_id: ${{ secrets.AMPLIFY_APP_ID }}
-          branch_name: production
-          commit_id: ${{ github.sha }}
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+
+      - name: Start Amplify Deployment
+        run: |
+          aws amplify start-job \
+            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+            --branch-name production \
+            --job-type RELEASE
