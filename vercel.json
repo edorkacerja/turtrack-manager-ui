@@ -1,12 +1,2 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/v1/:path*",
-      "destination": "https://api.turtrack.com/api/v1/:path*"
-    },
-    {
-      "source": "/((?!_next|static|public|favicon\\.ico|api\\/).*)(/)?",
-      "destination": "/"
-    }
-  ]
 }
