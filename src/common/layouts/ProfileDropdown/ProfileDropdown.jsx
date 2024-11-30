@@ -31,7 +31,7 @@ const ProfileDropdown = ({ user, onLogout, isOpen }) => {
 
     const handleManageSubscription = async () => {
         try {
-            const response = await api.post(`/api/v1/api/v1/checkout/create-portal-session`, {
+            const response = await api.post(`/api/v1/checkout/create-portal-session`, {
                 email: user.email,
                 returnUrl: window.location.origin + '/dashboard'
             });
